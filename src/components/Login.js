@@ -3,20 +3,25 @@ import { connect } from 'react-redux'
 import { updateLoginForm } from '../actions/loginForm.js'
 import { logIn } from '../actions/currentUser'
 
-const Login = ({ loginForm, updateLoginForm }) => {
+const Login = ({ loginFormData, updateLoginForm, logIn }) => {
     
      const handleChange = (e) => {
         const { name, value } = e.target 
         const formData = {
-            ...loginForm, 
+            ...loginFormData, 
            [name]: value
         }
         updateLoginForm(formData)
     }
+
+    const handleSubmit = e => {
+        e.preventDefault(); 
+        logIn(loginFormData)
+    }
     return  (
-        <form onSubmit={undefined}>
-            <input placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleChange} ></input>
-            <input placeholder="password" value={loginForm.password} name="password" type="text" onChange={handleChange} ></input>
+        <form onSubmit={handleSubmit}>
+            <input placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleChange} ></input>
+            <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleChange} ></input>
             <input type="submit" value="Login"></input>
         </form>
     )
@@ -24,10 +29,10 @@ const Login = ({ loginForm, updateLoginForm }) => {
 
 const mapStateToProps = state => {
     return {
-        loginForm: state.loginForm
+        loginFormData: state.loginForm
     }
 }
 
 
 
-export default connect(mapStateToProps, { updateLoginForm}) (Login)
+export default connect(mapStateToProps, { updateLoginForm, logIn}) (Login)
