@@ -27,3 +27,25 @@ export const logIn = credentials => {
         .catch(alert("You entered bad data dude"))
     }
 } 
+
+export const getCurrentUser = credentials => {
+    return dispatch => {
+        
+        return fetch("http://localhost:3001/login", {
+            method: "GET", 
+            headers: {
+                "Content-Type": "application/json"
+            },
+          
+        })
+        .then(resp => resp.json())
+        .then(user => {
+            if (user.error) {
+                alert(user.error)
+            } else {
+                dispatch(setCurrentUser(user))
+            }
+        })
+        .catch(alert("You entered bad data dude"))
+    }
+} 
