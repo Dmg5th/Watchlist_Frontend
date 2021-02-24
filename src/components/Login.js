@@ -1,38 +1,43 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateLoginForm } from '../actions/loginForm.js'
-import { logIn } from '../actions/currentUser'
+import { updateLoginForm } from "../actions/loginForm.js"
+import { login } from "../actions/currentUser.js"
 
-const Login = ({ loginFormData, updateLoginForm, logIn }) => {
-    
-     const handleChange = (e) => {
-        const { name, value } = e.target 
-        const formData = {
-            ...loginFormData, 
-           [name]: value
-        }
-        updateLoginForm(formData)
-    }
 
-    const handleSubmit = e => {
-        e.preventDefault(); 
-        logIn(loginFormData)
+const Login = ({ loginFormData, updateLoginForm, login}) => {
+
+  const handleInputChange = event => {
+    const { name, value } = event.target
+    const updatedFormInfo = {
+      ...loginFormData,
+      [name]: value
     }
-    return  (
-        <form onSubmit={handleSubmit}>
-            <input placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleChange} ></input>
-            <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleChange} ></input>
-            <input type="submit" value="Login"></input>
-        </form>
-    )
+    updateLoginForm(updatedFormInfo)
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    login(loginFormData)
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
+      <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
+      <input type="submit" value="Log In"/>
+    </form>
+  )
 }
 
+// this gives me an argument coming to this component that looks like this:
+// {
+//   username: "cpdun",
+//   password: "passwo"
+// }
 const mapStateToProps = state => {
-    return {
-        loginFormData: state.loginForm
-    }
+  return {
+    loginFormData: state.loginForm
+  }
 }
 
-
-
-export default connect(mapStateToProps, { updateLoginForm, logIn}) (Login)
+export default connect(mapStateToProps, { updateLoginForm, login } )(Login)
