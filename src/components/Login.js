@@ -2,19 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateLoginForm } from '../actions/loginForm.js'
 
-const Login = ({ username, password, updateLoginForm }) => {
+const Login = ({ loginForm, updateLoginForm }) => {
     const handleChange = (e) => {
         const { name, value } = e.target 
         const formData = {
-            name,
-            value
+            ...loginForm, 
+           [name]: value
         }
         updateLoginForm(formData)
     }
     return  (
         <form onSubmit={undefined}>
-            <input placeholder="username" value={username} name="password" type="text" onChange={handleChange} ></input>
-            <input placeholder="password" value={password} name="username" type="text" onChange={handleChange} ></input>
+            <input placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleChange} ></input>
+            <input placeholder="password" value={loginForm.password} name="password" type="text" onChange={handleChange} ></input>
             <input type="submit" value="Login"></input>
         </form>
     )
@@ -22,8 +22,7 @@ const Login = ({ username, password, updateLoginForm }) => {
 
 const mapStateToProps = state => {
     return {
-        username: state.loginForm.username,
-        password: state.loginForm.password
+        loginForm: state.loginForm
     }
 }
 
