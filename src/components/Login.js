@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateLoginForm } from '../actions/loginForm.js'
+import { logIn } from '../actions/currentUser'
 
 const Login = ({ loginForm, updateLoginForm }) => {
-    const handleChange = (e) => {
+    
+     const handleChange = (e) => {
         const { name, value } = e.target 
         const formData = {
             ...loginForm, 
