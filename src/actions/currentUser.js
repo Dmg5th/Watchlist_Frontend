@@ -5,6 +5,27 @@ export const setCurrentUser = user => {
         user
     }
 }
+
+export const clearCurrentUser = user => {
+  return {
+    type: "CLEAR_CURRENT_USER"
+  }
+}
+
+
+export const logout = () => {
+  return dispatch => {
+    dispatch(clearCurrentUser())
+    return fetch("http://localhost:3001/logout", {
+      credentials: "include",
+      method: "DELETE"
+    })
+  }
+}
+
+
+
+
 //asychronous fetch request that returns an object because Thunk enables it to return an object as well as use dispatch
 export const login = (credentials) => {
     return dispatch => {
