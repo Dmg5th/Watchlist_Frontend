@@ -7,17 +7,17 @@ import Logout from './Logout.js'
 const NavBar = ({ currentUser }) => {
     return (
         <div className="NavBar">
-            { currentUser? <strong> Welcome, {currentUser.username}</strong>: ""}
-            { currentUser? <Logout/> : <Login/>}
+            { currentUser ? <strong> Welcome, {currentUser.attributes.username}!</strong>: ""}
+            { currentUser ? <Logout/> : <Login/>}
         </div>
     )
 }
 
-const mapStateToProps = ({currentUser}) => {
+const mapStateToProps = ({ currentUser })=> {
     return {
         currentUser
     }
 }
 
 
-export default connect(mapStateToProps, null)(NavBar)
+export default connect(mapStateToProps)(NavBar)

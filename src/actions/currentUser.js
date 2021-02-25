@@ -1,3 +1,5 @@
+import { resetLoginForm } from './loginForm'
+
 //synchronous
 export const setCurrentUser = user => {
     return {
@@ -23,9 +25,6 @@ export const logout = () => {
   }
 }
 
-
-
-
 //asychronous fetch request that returns an object because Thunk enables it to return an object as well as use dispatch
 export const login = (credentials) => {
     return dispatch => {
@@ -42,8 +41,8 @@ export const login = (credentials) => {
           if (response.error) {
             alert(response.error)
           } else {
-            dispatch(setCurrentUser(response))
-         
+            dispatch(setCurrentUser(response.data))
+            dispatch(resetLoginForm())
           }
         })
         .catch(console.log)
@@ -59,13 +58,12 @@ export const login = (credentials) => {
         },
       })
         .then(r => r.json())
-        .then(user => {
-          if (user.error) {
-            alert(user.error)
+        .then(response => {
+          if (response.error) {
+            alert(response.error)
           } else {
-            dispatch(setCurrentUser(user))
-           
-          }
+            dispatch(setCurrentUser(response.data))
+           }
         })
         .catch(console.log)
     }
