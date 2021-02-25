@@ -16,7 +16,7 @@ export const clearCurrentUser = user => {
 export const logout = () => {
   return dispatch => {
     dispatch(clearCurrentUser())
-    return fetch("http://localhost:3001/logout", {
+    return fetch('http://localhost:3001/logout', {
       credentials: "include",
       method: "DELETE"
     })
@@ -42,7 +42,7 @@ export const login = (credentials) => {
           if (response.error) {
             alert(response.error)
           } else {
-            dispatch(setCurrentUser(response.data))
+            dispatch(setCurrentUser(response))
          
           }
         })
