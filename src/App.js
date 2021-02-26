@@ -4,6 +4,7 @@ import Navbar from './components/NavBar'
 import MainContainer from './components/MainContainer'
 import Login from './components/Login'
 import Logout from './components/Logout'
+import MyWatchlist from './components/MyWatchlist'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import {
@@ -20,14 +21,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div >
-        <Navbar />
-        <Router>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/logout" component={Logout}/>
-          <MainContainer />
-        </Router>
-      </div>
+      <Router>
+        <div >
+          <Navbar />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/user_movies" component={MyWatchlist} />
+            <MainContainer />
+        </div>
+      </Router>
     );
   }
 }
