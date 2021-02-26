@@ -12,7 +12,7 @@ class App extends React.Component {
   componentDidMount(){
     this.props.getCurrentUser()
   }
-  
+   
   render() {
     return (
       <div >

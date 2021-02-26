@@ -25,6 +25,12 @@ body {
   justify-content: space-evenly;
 }
 
-.NavBar {
+
+.nav-link{
   font-size: 2rem;
 }
+
+.navbar-brand{
+  font-size: 2rem;
+}
+
