@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/NavBar'
 import MainContainer from './components/MainContainer'
+import Login from './components/Login'
+import Logout from './components/Logout'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import {
@@ -12,27 +14,22 @@ import {
 } from "react-router-dom";
 class App extends React.Component {
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.getCurrentUser()
   }
-   
+
   render() {
     return (
-      <Router>
       <div >
-        <Navbar/>
-        <MainContainer/>
-     </div>
-     </Router>
+        <Navbar />
+        <Router>
+          
+        </Router>
+      </div>
     );
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     currentUser: state.loginform
-//   }
-// }
 
 export default connect(null, { getCurrentUser})(App);
  
