@@ -1,4 +1,5 @@
 import { resetLoginForm } from './loginForm'
+import { getMyWatchlist } from './myWatchlist'
 
 //synchronous
 export const setCurrentUser = user => {
@@ -42,6 +43,7 @@ export const login = (credentials) => {
             alert(response.error)
           } else {
             dispatch(setCurrentUser(response.data))
+            dispatch(getMyWatchlist())
             dispatch(resetLoginForm())
           }
         })
@@ -63,7 +65,7 @@ export const login = (credentials) => {
             alert(response.error)
           } else {
             dispatch(setCurrentUser(response.data))
-            // dispatch(getMyWatchlist())
+            dispatch(getMyWatchlist())
            }
         })
         .catch(console.log)

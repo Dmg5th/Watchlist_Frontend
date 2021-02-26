@@ -1,5 +1,5 @@
 //synchronous action 
-export const setCurrentUser = user => {
+export const setMyWatchlist = user => {
     return {
         type: 'SET_MY_WATCHLIST', 
         user
@@ -9,10 +9,10 @@ export const setCurrentUser = user => {
 //ascynchrounous action 
 export const getMyWatchlist = () => {
     return dispatch => {
-        return fetch("http://localhost:3001/get_current_user", {
+        return fetch("http://localhost:3001/user_movies", {
             credentials: "include",
             method: "GET",
-            headers: {
+            headers: { 
               "Content-Type": "application/json"
             },
           })
@@ -21,8 +21,7 @@ export const getMyWatchlist = () => {
               if (response.error) {
                 alert(response.error)
               } else {
-                dispatch()
-                // dispatch(getMyWatchlist())
+               dispatch(setMyWatchlist([]))
                }
             })
             .catch(console.log)
