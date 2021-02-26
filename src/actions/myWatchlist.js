@@ -1,8 +1,8 @@
 //synchronous action 
-export const setMyWatchlist = user => {
+export const setMyWatchlist = watchlist => {
     return {
         type: 'SET_MY_WATCHLIST', 
-        user
+        watchlist
     }
 }
 
@@ -18,10 +18,11 @@ export const getMyWatchlist = () => {
           })
             .then(r => r.json())
             .then(response => {
+                console.log(response)
               if (response.error) {
                 alert(response.error)
               } else {
-               dispatch(setMyWatchlist([]))
+               dispatch(setMyWatchlist(response))
                }
             })
             .catch(console.log)

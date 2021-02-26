@@ -1,6 +1,7 @@
 export default (state = [], action) => {
     switch (action.type) {
-        // case value:
+       case 'SET_MY_WATCHLIST':
+         return action.watchlist
             
         //     break;
     
