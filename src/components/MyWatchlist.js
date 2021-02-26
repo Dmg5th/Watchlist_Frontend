@@ -10,7 +10,7 @@ class MyWatchlist extends React.Component {
         })
         return (
             <div>
-             {watchlistCard}
+                {watchlistCard.length > 0 ? watchlistCard : null}
              </div>
         )
     }
