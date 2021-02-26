@@ -63,6 +63,7 @@ export const login = (credentials) => {
             alert(response.error)
           } else {
             dispatch(setCurrentUser(response.data))
+            //make a setMyWatchList funtion that passes in the response.data.relationships
            }
         })
         .catch(console.log)
