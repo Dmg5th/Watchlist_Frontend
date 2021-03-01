@@ -13,7 +13,7 @@ class MyWatchlist extends React.Component {
                 {watchlistCard.length > 0 ? watchlistCard : null}
              </div>
         )
-    }
+    } 
 }
 
 

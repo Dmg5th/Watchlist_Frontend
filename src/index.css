@@ -10,6 +10,9 @@ html {
 
 body {
   font-size: 1.6rem;
+  background-image: url("https://i.pinimg.com/originals/70/3e/9f/703e9f31abcd0c048bba695bdd5ab560.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; 
 }
 .movie__image {
   width: 20rem;
@@ -33,4 +36,6 @@ body {
 .navbar-brand{
   font-size: 2rem;
 }
+
+
 
