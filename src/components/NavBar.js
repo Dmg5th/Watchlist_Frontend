@@ -8,7 +8,7 @@ const NavBar = ({ currentUser, loggedIn }) => {
     return (
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a className="navbar-brand"> <Link to="/">WELCOME TO WATCHLIST! </Link></a>
+            <a className="navbar-brand"><Link to="/">WELCOME TO WATCHLIST!</Link></a>
             {currentUser ? <strong> Welcome, {currentUser.attributes.username}!</strong> : ""}
             {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,6 +35,10 @@ const NavBar = ({ currentUser, loggedIn }) => {
                         </li>
                     </div>
                 </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input className="form-control mr-sm-2" type="text" placeholder="Search" />
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
         </nav>
 
