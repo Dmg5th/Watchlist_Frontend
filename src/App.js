@@ -10,6 +10,7 @@ import Home from './components/Home'
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import { Route, Switch, withRouter } from 'react-router-dom'
+
 class App extends React.Component {
 
   componentDidMount() {
@@ -21,13 +22,14 @@ class App extends React.Component {
     return (
         <div >
           {/* <Switch> */}
-          <Navbar />
+          <Navbar  loggedIn={loggedIn}/>
           { loggedIn ? <Logout/> : null }
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/" render={(props) => loggedIn ? <MyWatchlist {...props}/> : <Home/>} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/user_movies" component={MyWatchlist} />
+            {/* <Route exact path="/user_movies/new" component={NewWatchlist} /> */}
             <MainContainer />
             {/* </Switch> */}
         </div>

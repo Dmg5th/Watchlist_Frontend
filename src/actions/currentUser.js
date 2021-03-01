@@ -74,7 +74,7 @@ export const login = (credentials, history) => {
     }
   }
 
-  export const signup = (credentials) => {
+  export const signup = (credentials, history) => {
     return dispatch => {
       const userInfo = {
         user: credentials
@@ -95,6 +95,7 @@ export const login = (credentials, history) => {
             dispatch(setCurrentUser(response.data))
             dispatch(getMyWatchlist())
             dispatch(resetSignupForm())
+            history.push('/')
           }
         })
         .catch(console.log)

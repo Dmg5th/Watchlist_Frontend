@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
-        <span>
-            <Link to="/signup"> Signup</Link> OR <Link to="/login">Log in</Link>
-        </span>
+        <div>
+            <span>
+                <Link to="/signup"> Signup</Link> OR <Link to="/login">Log in</Link>
+            </span>
+        </div>
     )
 }  
 
