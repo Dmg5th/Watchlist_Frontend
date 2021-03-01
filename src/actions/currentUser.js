@@ -1,5 +1,6 @@
 import { resetLoginForm } from './loginForm'
 import { getMyWatchlist } from './myWatchlist'
+import { resetSignupForm} from './signupForm'
 
 //synchronous
 export const setCurrentUser = user => {
@@ -72,6 +73,33 @@ export const login = (credentials) => {
     }
   }
 
-  // export const signup = () => {
-  //   return null
-  // }
+  export const signup = (credentials) => {
+    return dispatch => {
+      const userInfo = {
+        user: credentials
+      }
+      return fetch("http://localhost:3001/signup", {
+        credentials: "include",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userInfo)
+      })
+        .then(r => r.json())
+        .then(response => {
+          if (response.error) {
+            alert(response.error)
+          } else {
+            // console.log(response
+            //   )
+            dispatch(setCurrentUser(response.data))
+            dispatch(getMyWatchlist())
+            dispatch(resetSignupForm())
+          }
+        })
+        .catch(console.log)
+    }
+  }
+
+ 
