@@ -91,8 +91,6 @@ export const login = (credentials) => {
           if (response.error) {
             alert(response.error)
           } else {
-            // console.log(response
-            //   )
             dispatch(setCurrentUser(response.data))
             dispatch(getMyWatchlist())
             dispatch(resetSignupForm())
