@@ -6,10 +6,9 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
-        <div>
-            <h2>Welcome to Watchlist, please log in or sign up!</h2>
+        <span>
             <Link to="/signup"> Signup</Link> OR <Link to="/login">Log in</Link>
-        </div>
+        </span>
     )
 }  
 

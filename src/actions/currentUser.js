@@ -28,7 +28,7 @@ export const logout = () => {
 }
 
 //asychronous fetch request that returns an object because Thunk enables it to return an object as well as use dispatch
-export const login = (credentials) => {
+export const login = (credentials, history) => {
     return dispatch => {
       return fetch("http://localhost:3001/login", {
         credentials: "include",
@@ -46,6 +46,7 @@ export const login = (credentials) => {
             dispatch(setCurrentUser(response.data))
             dispatch(getMyWatchlist())
             dispatch(resetLoginForm())
+            history.push('/')
           }
         })
         .catch(console.log)
