@@ -25,6 +25,7 @@ class App extends React.Component {
         <div >
           <Navbar />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/logout" component={Logout} />
             <Route exact path="/user_movies" component={MyWatchlist} />
             <MainContainer />
         </div>
