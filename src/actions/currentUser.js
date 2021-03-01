@@ -71,3 +71,7 @@ export const login = (credentials) => {
         .catch(console.log)
     }
   }
+
+  // export const signup = () => {
+  //   return null
+  // }
