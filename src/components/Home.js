@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <span>
-                <Link to="/signup"> Signup</Link> OR <Link to="/login">Log in</Link>
+                {/* <Link to="/signup"> Signup</Link> OR <Link to="/login">Log in</Link> */}
             </span>
         </div>
     )

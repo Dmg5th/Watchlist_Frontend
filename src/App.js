@@ -23,7 +23,6 @@ class App extends React.Component {
         <div >
           {/* <Switch> */}
           <Navbar  loggedIn={loggedIn}/>
-          { loggedIn ? <Logout/> : null }
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/" render={(props) => loggedIn ? <MyWatchlist {...props}/> : <Home/>} />

@@ -10,8 +10,11 @@ const NavBar = ({ currentUser, loggedIn }) => {
         <div className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">WELCOME TO WATCHLIST!</a>
             { currentUser ? <strong> Welcome, {currentUser.attributes.username}!</strong>: ""}
-            <Link to="/signup" className="nav-link"> Signup</Link> OR <Link to="/login" className="nav-link">Log in</Link>
-            { loggedIn ? <Logout/> : null }
+ 
+        {loggedIn ? <Logout />
+             : (
+                    <div className="collapse navbar-collapse"> <Link to="/signup" className="nav-link"> Signup</Link> OR <Link to="/login" className="nav-link">Log in</Link> </div>
+                )}
         </div>
     )
 }
