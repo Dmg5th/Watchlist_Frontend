@@ -10,10 +10,12 @@ const ResultsCard = props => {
                     <Card.Title>{props.data.title}</Card.Title>
                     {props.data.poster_path ? (
                     <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${props.data.poster_path}`} alt={props.data.title}/> 
-
                     ): (
                         <div className="filler-poster"></div>
                     )}
+                    <div className="controls">
+                        <button className="btn btn-success">Add to Watchlist</button>
+                    </div>
                 </Card>
             </div>
         </div>
