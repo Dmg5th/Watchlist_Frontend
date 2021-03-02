@@ -14,7 +14,7 @@ const ResultsCard = props => {
                         <div className="filler-poster"></div>
                     )}
                     <div className="controls">
-                        <button className="btn btn-success">Add to Watchlist</button>
+                        <button className="btn btn-primary btn-lg">Add to Watchlist</button>
                     </div>
                 </Card>
             </div>

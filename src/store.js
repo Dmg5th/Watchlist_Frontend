@@ -13,8 +13,7 @@ const reducer = combineReducers({
     loginForm,
     signupForm, 
     myWatchlist 
-
-  })
+})
   
   const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; 
   

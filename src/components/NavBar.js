@@ -11,10 +11,7 @@ const NavBar = ({ currentUser, loggedIn }) => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <a className="navbar-brand"><Link to="/">WELCOME TO WATCHLIST!</Link></a>
             {currentUser ? <strong> Welcome, {currentUser.attributes.username}!</strong> : ""}
-            {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> */}
-            <div className="collapse navbar-collapse" id="navbarColor03">
+              <div className="collapse navbar-collapse" id="navbarColor03">
                 <ul className="navbar-nav mr-auto">
                     <div className="collapse navbar-collapse" id="navbarColor03" >
                         <li className="nav-item active">
