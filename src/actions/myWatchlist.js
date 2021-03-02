@@ -6,9 +6,9 @@ export const setMyWatchlist = watchlist => {
     }
 }
 
-export const addMovieToWatchlist = movie => {
- return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie})
-}
+// export const addMovie = movie => {
+//  return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie})
+// }
 
 
 //ascynchrounous action 
@@ -32,5 +32,32 @@ export const getMyWatchlist = () => {
             })
             .catch(console.log)
     }
-  
+}
+
+// export const addMovieToWatchlist = movie => {
+//   return dispatch => {
+//     return fetch("http://localhost:3001/user_movies", {
+//       credentials: "include",
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(movie)
+//     })
+//       .then(r => r.json())
+//       .then(response => {
+//         if (response.error) {
+//           alert(response.error)
+//         } else {
+//           dispatch(addMovie(response.data))
+//           dispatch(getMyWatchlist())
+//           // dispatch(resetLoginForm())
+//           // history.push('/')
+//         }
+//       })
+//       .catch(console.log)
+//   }
+// }
+export const addMovieToWatchlist = movie => {
+ return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie})
 }

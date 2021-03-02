@@ -3,8 +3,10 @@ import { Card } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { addMovieToWatchlist } from "../../actions/myWatchlist"
 
-const ResultsCard = ({ movie, addMovieToWatchlist}) => {
-    
+const ResultsCard = ({ movie, addMovieToWatchlist, watchlist}) => {
+//come back to this 
+// let storedMovie = watchlist.find(MovieObj => MovieObj.id === movie.id)
+// const watchlistDisabled = storedMovie ? true  : false
 
     return (
         <div >
@@ -17,7 +19,9 @@ const ResultsCard = ({ movie, addMovieToWatchlist}) => {
                         <div className="filler-poster"></div>
                     )}
                     <div className="controls">
-                        <button onClick={() => addMovieToWatchlist(movie)} className="btn btn-primary btn-lg">Add to Watchlist</button>
+                        <button 
+                        // disabled={watchlistDisabled}
+                        onClick={() => addMovieToWatchlist(movie)} className="btn btn-primary btn-lg">Add to Watchlist</button>
                     </div>
                 </Card>
             </div>
@@ -25,11 +29,10 @@ const ResultsCard = ({ movie, addMovieToWatchlist}) => {
     )
 }
 
-const mapDispatchToProps = state => {
-    return ({
-        watchlist: state.watchlist
+const mapStateToProps = state => {
+    return {
+        watchlist: state.myWatchlist
     }
-  )
-}
+} 
 
-export default connect(mapDispatchToProps, {addMovieToWatchlist} )(ResultsCard); 
+export default connect(mapStateToProps, {addMovieToWatchlist} )(ResultsCard); 

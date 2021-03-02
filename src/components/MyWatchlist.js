@@ -2,28 +2,27 @@ import React from 'react'
 import { connect } from 'react-redux'
 import WatchlistCard from './WatchlistCard'
 
-class MyWatchlist extends React.Component {
-     
-    render(){
-        return(
-            <div>WATCHLIST COMPONENT</div>
-        )
-        // const watchlistCard = this.props.watchlist.map(movieObj => {
-        //     return <WatchlistCard title={movieObj.title} key={movieObj.id}/>
-        // })
-        // return (
-        //     <div>
-        //         {watchlistCard.length > 0 ? watchlistCard : null}
-        //      </div>
-        // )
-    } 
+
+
+export const MyWatchlist = ({ watchlist }) => {
+    console.log(watchlist)
+    return (
+        <div>
+            
+           {watchlist.watchlist.map(movie => {
+               return <h1>{movie.title}</h1>
+           })}
+        </div>
+    )
 }
 
-
-   const mapStateToProps = state => {
+const mSTP = state => {
     return {
-        watchlist: state.myWatchlist
+     watchlist: state.myWatchlist
     }
-} 
+}
 
-export default connect(mapStateToProps)(MyWatchlist)
+export default connect(mSTP)(MyWatchlist); 
+
+
+

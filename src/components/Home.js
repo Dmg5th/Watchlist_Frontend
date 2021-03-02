@@ -9,9 +9,6 @@ const Home = () => {
     return (
         <div>
              <MainContainer />
-            <span>
-                {/* <Link to="/signup"> Signup</Link> OR <Link to="/login">Log in</Link> */}
-            </span>
         </div>
     )
 }  
