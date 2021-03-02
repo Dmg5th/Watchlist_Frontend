@@ -31,15 +31,15 @@ class Search extends React.Component {
     render() {
        
         return (
-            <div>
-                <div class="search-form-wrapper">
-                    <form class="form-inline my-2 my-lg-0" >
+            <div className="main">
+                <div className="search-form-wrapper">
+                    <form className="form-inline my-2 my-lg-0" >
                         <input className="form-control mr-sm-2" type="text" placeholder="Search for a movie" value={this.state.query} onChange={this.handleChange} />
                         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
                 {this.state.results.map(movie => {
-                    return <ResultsCard ket={movie.id} data={movie}/>
+                    return <ResultsCard key={movie.id} data={movie}/>
                 })}
             </div>
         )
