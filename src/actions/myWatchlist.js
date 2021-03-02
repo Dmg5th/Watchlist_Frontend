@@ -10,6 +10,9 @@ export const addMovieToWatchlist = movie => {
  return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie})
 }
 
+
+
+
 //ascynchrounous action 
 export const getMyWatchlist = () => {
     return dispatch => {

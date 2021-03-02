@@ -4,13 +4,18 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    switch (action.type) {
-       case 'SET_MY_WATCHLIST':
-         return action.watchlist
-            
-        //     break;
-    
-        default:
-           return state
-    }
+  switch (action.type) {
+    case 'SET_MY_WATCHLIST':
+      return action.watchlist
+    case "ADD_MOVIE_TO_WATCHLIST":
+      return {
+        ...state,
+        watchlist: [action.payload, ...state]
+      }
+
+    //     break;
+
+    default:
+      return state
+  }
 }
