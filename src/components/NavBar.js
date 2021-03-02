@@ -23,6 +23,9 @@ const NavBar = ({ currentUser, loggedIn }) => {
                         <li className="nav-item active">
                             <a><Link to="/watched" className="nav-link">Watched</Link></a>
                         </li>
+                        <li className="nav-item active">
+                            <a><Link to="/search" className="nav-link">Search</Link></a>
+                        </li>
                         {loggedIn ? <Logout />
                         : (
                             <div className="collapse navbar-collapse" id="navbarColor03">
@@ -34,9 +37,10 @@ const NavBar = ({ currentUser, loggedIn }) => {
                                 </li>
                             </div>
                         )}
+                        
                     </div>
                 </ul>
-                <Search/>
+                
             </div>
         </nav>
 
