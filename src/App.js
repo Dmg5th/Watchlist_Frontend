@@ -1,7 +1,9 @@
 import React from 'react';
+//CSS
 import './App.css';
+import './lib/font-awesome/css/all.min.css'
+//Components
 import Navbar from './components/NavBar'
-import MainContainer from './components/MainContainer'
 import Signup from './components/SignUp'
 import Login from './components/Login'
 import Logout from './components/Logout'
@@ -9,6 +11,7 @@ import MyWatchlist from './components/MyWatchlist'
 import Watched from './components/movies/Watched'
 import Search from './components/movies/Search'
 import Home from './components/Home'
+//Redux
 import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser'
 import { Route, Switch, withRouter } from 'react-router-dom'
@@ -23,16 +26,21 @@ class App extends React.Component {
     const { loggedIn } = this.props
     return (
         <div >
-          {/* <Switch> */}
+         
           <Navbar  loggedIn={loggedIn}/>
+            <Switch>
+            <Route exact path="/" component={Home}/>
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/" render={(props) => loggedIn ? <MyWatchlist {...props}/> : <Home/>} />
+            {/* //Need to make it so a user can only there watchlist */}
+            {/* <Route exact path="/watchlist" render={(props) => loggedIn ? <MyWatchlist {...props}/> : <Signup/>} /> */}
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/user_movies" component={MyWatchlist} />
-            {/* <Route exact path="/user_movies/new" component={NewWatchlist} /> */}
-            <MainContainer />
-            {/* </Switch> */}
+            <Route exact path="/watched" component={Watched}/>
+            <Route exact path="/search" component={Search}/>
+            </Switch> 
+           
+           
         </div>
      
     );

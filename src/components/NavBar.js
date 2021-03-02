@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux'
 import Logout from './Logout'
 import { Link } from 'react-router-dom'
+// import Search from './components/movies/Search'
+import Search from '../components/movies/Search'
 
 
 const NavBar = ({ currentUser, loggedIn }) => {
@@ -15,7 +17,14 @@ const NavBar = ({ currentUser, loggedIn }) => {
             </button> */}
             <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
-                    {loggedIn ? <Logout />
+                    <div class="collapse navbar-collapse" id="navbarColor03" >
+                        <li class="nav-item active">
+                            <a><Link to="/user_movies" className="nav-link">Watchlist</Link></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a><Link to="/watched" className="nav-link">Watched</Link></a>
+                        </li>
+                        {loggedIn ? <Logout />
                         : (
                             <div class="collapse navbar-collapse" id="navbarColor03">
                                 <li class="nav-item active">
@@ -26,19 +35,9 @@ const NavBar = ({ currentUser, loggedIn }) => {
                                 </li>
                             </div>
                         )}
-                    <div class="collapse navbar-collapse" id="navbarColor03" >
-                        <li class="nav-item active">
-                            <a><Link to="/user_movies" className="nav-link">Watchlist</Link></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a><Link to="/watched" className="nav-link">Watched</Link></a>
-                        </li>
                     </div>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                <Search/>
             </div>
         </nav>
 
