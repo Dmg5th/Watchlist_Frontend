@@ -1,15 +1,20 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import { connect } from 'react-redux'
+import { addMovieToWatchlist } from "../../actions/myWatchlist"
 
-const ResultsCard = props => {
+const ResultsCard = ({ movie }) => {
     
+    // handleClick = () => {
+    //     return null
+    // }
     return (
         <div >
             <div className="movie">
                 <Card>
-                    <Card.Title>{props.data.title}</Card.Title>
-                    {props.data.poster_path ? (
-                    <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${props.data.poster_path}`} alt={props.data.title}/> 
+                    <Card.Title>{movie.title}</Card.Title>
+                    {movie.poster_path ? (
+                    <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/> 
                     ): (
                         <div className="filler-poster"></div>
                     )}

@@ -39,7 +39,7 @@ class Search extends React.Component {
                     </form>
                 </div>
                 {this.state.results.map(movie => {
-                    return <ResultsCard key={movie.id} data={movie}/>
+                    return <ResultsCard key={movie.id} movie={movie}/>
                 })}
             </div>
         )

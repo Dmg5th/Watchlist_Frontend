@@ -11,8 +11,6 @@ export const addMovieToWatchlist = movie => {
 }
 
 
-
-
 //ascynchrounous action 
 export const getMyWatchlist = () => {
     return dispatch => {
