@@ -21,7 +21,7 @@ class MainContainer extends React.Component {
     render() {
         return (
             <div className="main ">
-                <MyWatchlist/>
+                {/* <MyWatchlist/> */}
                 {this.state.movies.map(movie => {
                     return <Movie key={movie.id} data={movie}/>
                 })} 

@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { addMovieToWatchlist } from "../../actions/myWatchlist"
 
-const ResultsCard = ({ movie }) => {
+const ResultsCard = ({ movie, addMovieToWatchlist}) => {
     
 
     return (
@@ -17,7 +17,7 @@ const ResultsCard = ({ movie }) => {
                         <div className="filler-poster"></div>
                     )}
                     <div className="controls">
-                        <button className="btn btn-primary btn-lg">Add to Watchlist</button>
+                        <button onClick={() => addMovieToWatchlist(movie)} className="btn btn-primary btn-lg">Add to Watchlist</button>
                     </div>
                 </Card>
             </div>
