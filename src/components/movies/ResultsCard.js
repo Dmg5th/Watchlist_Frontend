@@ -5,9 +5,7 @@ import { addMovieToWatchlist } from "../../actions/myWatchlist"
 
 const ResultsCard = ({ movie }) => {
     
-    // handleClick = () => {
-    //     return null
-    // }
+
     return (
         <div >
             <div className="movie">
@@ -27,4 +25,6 @@ const ResultsCard = ({ movie }) => {
     )
 }
 
-export default ResultsCard; 
+
+
+export default connect(null, {addMovieToWatchlist} )(ResultsCard); 
