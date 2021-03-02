@@ -13,6 +13,8 @@ export default (state = initialState, action) => {
         watchlist: [action.payload, ...state]
       }
 
+   
+
     //     break;
 
     default:

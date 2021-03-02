@@ -25,6 +25,11 @@ const ResultsCard = ({ movie, addMovieToWatchlist}) => {
     )
 }
 
+const mapDispatchToProps = state => {
+    return ({
+        watchlist: state.watchlist
+    }
+  )
+}
 
-
-export default connect(null, {addMovieToWatchlist} )(ResultsCard); 
+export default connect(mapDispatchToProps, {addMovieToWatchlist} )(ResultsCard); 
