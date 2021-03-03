@@ -59,5 +59,9 @@ export const getMyWatchlist = () => {
 //   }
 // }
 export const addMovieToWatchlist = movie => {
- return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie})
-}
+  return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie });
+};
+
+export const removeMovieFromWatchlist = id => {
+  return ({ type: "REMOVE_MOVIE_FROM_WATCHLIST", payload: id });
+};
