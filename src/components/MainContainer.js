@@ -1,6 +1,6 @@
 import React from 'react'
 import Movie from './movies/Movie'
-import MyWatchlist from './MyWatchlist'
+
 
 const featured_api = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}`
 
@@ -21,8 +21,7 @@ class MainContainer extends React.Component {
     render() {
         return (
             <div className="main ">
-                {/* <MyWatchlist/> */}
-                {this.state.movies.map(movie => {
+               {this.state.movies.map(movie => {
                     return <Movie key={movie.id} data={movie}/>
                 })} 
             </div>

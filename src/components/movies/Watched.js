@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import WatchlistCard from '../WatchlistCard'
 
 const Watched = ({ watched }) => {
+  console.log(watched)
     return (
       <div>
       <h1 className="heading">My Watchlist</h1>
@@ -18,7 +19,7 @@ const Watched = ({ watched }) => {
  
 const mSTP = state => {
   return {
-    watched: state.watched
+    watched: state.myWatchlist.watched
   }
 }
 

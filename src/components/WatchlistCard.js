@@ -2,8 +2,10 @@ import React from 'react'
 import { Card }from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { removeMovieFromWatchlist } from '../actions/myWatchlist'
+import { addMovieToWatched } from '../actions/myWatchlist'
 
-const WatchlistCard = ({movie, removeMovieFromWatchlist}) => {
+
+const WatchlistCard = ({movie, removeMovieFromWatchlist, addMovieToWatched}) => {
   
   return (
     <div className="main">
@@ -14,7 +16,7 @@ const WatchlistCard = ({movie, removeMovieFromWatchlist}) => {
             <div class="card-body">
               <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
               
-              <button className="btn btn-success">
+              <button onClick={() => addMovieToWatched(movie)} className="btn btn-success">
                 <i className="fa-fw far fa-eye"></i>
               </button>
               
@@ -37,4 +39,4 @@ const mSTP = state => {
   }
 }
 
-export default connect(mSTP, { removeMovieFromWatchlist })(WatchlistCard); 
+export default connect(mSTP, { removeMovieFromWatchlist, addMovieToWatched })(WatchlistCard); 

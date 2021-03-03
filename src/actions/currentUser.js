@@ -44,7 +44,7 @@ export const login = (credentials, history) => {
             alert(response.error)
           } else {
             dispatch(setCurrentUser(response.data))
-            dispatch(getMyWatchlist())
+            // dispatch(getMyWatchlist())
             dispatch(resetLoginForm())
             history.push('/')
           }

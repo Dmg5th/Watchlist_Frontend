@@ -6,7 +6,7 @@ import WatchlistCard from './WatchlistCard'
 
 
 export const MyWatchlist = ({ watchlist }) => {
-    console.log(watchlist)
+    
     return (
         <div>
             <h1 className="heading">My Watchlist</h1>

@@ -6,11 +6,6 @@ export const setMyWatchlist = watchlist => {
     }
 }
 
-// export const addMovie = movie => {
-//  return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie})
-// }
-
-
 //ascynchrounous action 
 export const getMyWatchlist = () => {
     return dispatch => {
@@ -69,3 +64,4 @@ export const removeMovieFromWatchlist = id => {
 export const addMovieToWatched = movie => {
   return ({ type: "ADD_MOVIE_TO_WATCHED", payload: movie})
 }
+
