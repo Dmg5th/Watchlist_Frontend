@@ -5,7 +5,7 @@ import { addMovieToWatchlist } from "../../actions/myWatchlist"
 
 const ResultsCard = ({ movie, addMovieToWatchlist, watchlist}) => {
 //come back to this 
-let storedMovie = watchlist.watchlist.find(MovieObj => MovieObj.id === movie.id)
+// let storedMovie = watchlist.watchlist.find(MovieObj => MovieObj.id === movie.id)
 // const watchlistDisabled = storedMovie ? true  : false
 
     return (

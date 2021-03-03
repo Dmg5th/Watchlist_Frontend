@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card }from 'react-bootstrap'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { removeMovieFromWatchlist } from '../actions/myWatchlist'
 
 const WatchlistCard = ({movie, removeMovieFromWatchlist}) => {

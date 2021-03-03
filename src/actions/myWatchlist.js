@@ -65,3 +65,7 @@ export const addMovieToWatchlist = movie => {
 export const removeMovieFromWatchlist = id => {
   return ({ type: "REMOVE_MOVIE_FROM_WATCHLIST", payload: id });
 };
+
+export const addMovieToWatched = movie => {
+  return ({ type: "ADD_MOVIE_TO_WATCHED", payload: movie})
+}

@@ -9,7 +9,7 @@ export const MyWatchlist = ({ watchlist }) => {
     console.log(watchlist)
     return (
         <div>
-            <h1 className="watchlist-title">My Watchlist</h1>
+            <h1 className="heading">My Watchlist</h1>
             <div>
             {/* have to include logic here if there is nothing in the watchlist, code below */}
             {watchlist.watchlist.map(movie => {
