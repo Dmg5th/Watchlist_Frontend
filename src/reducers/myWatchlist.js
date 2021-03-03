@@ -12,10 +12,11 @@ export default (state = initialState, action) => {
         ...state,
         watchlist: [action.payload, ...state]
       }
-
-   
-
-    //     break;
+    case "REMOVE_MOVIE_FROM_WATCHLIST":
+      return {
+        ...state,
+        watchlist: state.watchlist.filter(movieObj => movieObj.id !== action.payload)
+      }
 
     default:
       return state
