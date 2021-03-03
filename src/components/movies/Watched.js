@@ -1,20 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import WatchlistCard from '../WatchlistCard'
+import WatchedCard from '../WatchedCard'
 
 const Watched = ({ watched }) => {
   console.log(watched)
-    return (
+  return (
+    <div>
+      <h1 className="heading">Watched List</h1>
       <div>
-      <h1 className="heading">My Watchlist</h1>
-      <div>
-      {/* have to include logic here if there is nothing in the watchlist, code below */}
-      {watched.map(movie => {
-         return <WatchlistCard key={movie.id} movie={movie} type="watchlist"/>
-      })}
-      </div> 
-  </div>
-    )
+
+        {watched.length > 0 ? (
+          <div className="main">
+            {watched.map((movie) => (
+              <WatchedCard movie={movie} key={movie.id} type="watched" />
+            ))}
+          </div>
+        ) : (
+            <h2 className="no-movies">No movies in your list! Add some!</h2>
+          )}
+      </div>
+    </div>
+  )
 }
  
 const mSTP = state => {
@@ -26,9 +32,11 @@ const mSTP = state => {
 export default connect(mSTP)(Watched)
 
 // {watched.length > 0 ? (
-//   {watched.map(movie => {
-//     return <WatchlistCard key={movie.id} movie={movie} type="watchlist"/>
-//  })}
-// ): (
-//   <h2 className= "no-movies">No movies on yuor list, add some!</h2>
+//   <div className="movie-grid">
+//     {watched.map((movie) => (
+//       <MovieCard movie={movie} key={movie.id} type="watched" />
+//     ))}
+//   </div>
+// ) : (
+//   <h2 className="no-movies">No movies in your list! Add some!</h2>
 // )}

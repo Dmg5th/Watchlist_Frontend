@@ -1,6 +1,6 @@
 const initialState = {
   watchlist: [],
-  watched:  []
+  watched: []
 }
 
 export default (state = initialState, action) => {
@@ -9,8 +9,8 @@ export default (state = initialState, action) => {
     //   return action.watchlist
     case "ADD_MOVIE_TO_WATCHLIST":
       return {
-       ...state, 
-        watchlist: [ action.payload, ...state.watchlist],
+        ...state,
+        watchlist: [action.payload, ...state.watchlist],
       };
     case "REMOVE_MOVIE_FROM_WATCHLIST":
       return {
@@ -21,8 +21,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         watchlist: state.watchlist.filter(movieObj => movieObj.id !== action.payload.id),
-        watched: [action.payload, ...state.watched ],
+        watched: [action.payload, ...state.watched],
       };
+    case "REMOVE_MOVIE_FROM_WATCHED":
+      return {
+        ...state,
+        watched: state.watched.filter(movieObj => movieObj.id !== action.payload),
+      }
     default:
       return state
   }

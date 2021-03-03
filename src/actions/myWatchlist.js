@@ -65,3 +65,9 @@ export const addMovieToWatched = movie => {
   return ({ type: "ADD_MOVIE_TO_WATCHED", payload: movie})
 }
 
+export const removeMovieFromWatched =id => {
+  return ({ type: "REMOVE_MOVIE_FROM_WATCHED", payload: id})
+}
+
+
+
