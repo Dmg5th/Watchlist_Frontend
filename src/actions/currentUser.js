@@ -17,7 +17,7 @@ export const clearCurrentUser = user => {
 }
 
 
-export const logout = () => {
+export const logout = history => {
   return dispatch => {
     dispatch(clearCurrentUser())
     return fetch('http://localhost:3001/logout', {
