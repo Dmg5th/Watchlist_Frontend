@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import { addMovieToWatchlist } from "../../actions/myWatchlist"
 
 const ResultsCard = ({ movie, addMovieToWatchlist, watchlist}) => {
-//come back to this 
-// let storedMovie = watchlist.watchlist.find(MovieObj => MovieObj.id === movie.id)
-// const watchlistDisabled = storedMovie ? true  : false
+
+let storedMovie = watchlist.find(MovieObj => MovieObj.id === movie.id)
+const watchlistDisabled = storedMovie ? true  : false
 //also add funciotnality so once a user adds a movie that movie is no longer avail to add
     return (
         <div >
@@ -20,7 +20,7 @@ const ResultsCard = ({ movie, addMovieToWatchlist, watchlist}) => {
                     )}
                     <div className="controls">
                         <button 
-                        // disabled={watchlistDisabled}
+                        disabled={watchlistDisabled}
                         onClick={() => addMovieToWatchlist(movie)} className="btn btn-primary btn-lg">Add to Watchlist</button>
                     </div>
                 </Card>
@@ -31,7 +31,7 @@ const ResultsCard = ({ movie, addMovieToWatchlist, watchlist}) => {
 
 const mapStateToProps = state => {
     return {
-        watchlist: state.myWatchlist
+        watchlist: state.myWatchlist.watchlist
     }
 } 
 
