@@ -6,18 +6,19 @@ import WatchlistCard from './WatchlistCard'
 
 
 export const MyWatchlist = ({ watchlist }) => {
-
+    console.log(watchlist)
     return (
         <div>
-            <h1>My Watchlist</h1>
+            <h1 className="watchlist-title">My Watchlist</h1>
             <div>
             {/* have to include logic here if there is nothing in the watchlist, code below */}
             {watchlist.watchlist.map(movie => {
-               return <WatchlistCard key={movie.id} movie={movie}/>
+               return <WatchlistCard key={movie.id} movie={movie} type="watchlist"/>
             })}
             </div>
         </div>
     )
+    
 }
 
 
@@ -31,13 +32,18 @@ const mSTP = state => {
 
 export default connect(mSTP)(MyWatchlist); 
 
+
+// {watchlist.watchlist.length > 0 ? (
+//     {watchlist.watchlist.map(movie => (
+//          <WatchlistCard key={movie.id} movie={movie} type="watchlist"/>
+//      ))}
+// ) : (
+//     <h2 className="no-movies">No movies</h2>
+// )
  
 
-    // {watchlist.watchlist.length > 0 ? 
-    //     watchlist.watchlist.map(movie => (
-    //         <h1>{movie.title}</h1>
-    //     )) : 
-    //     null}
+
+
 
 
 
