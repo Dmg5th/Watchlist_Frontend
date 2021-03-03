@@ -3,11 +3,13 @@ import { Card } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { addMovieToWatchlist } from "../../actions/myWatchlist"
 
-const ResultsCard = ({ movie, addMovieToWatchlist, watchlist}) => {
-
+const ResultsCard = ({ movie, addMovieToWatchlist, watchlist, watched}) => {
+//Once a user adds a movie that movie is no longer avail to add
 let storedMovie = watchlist.find(MovieObj => MovieObj.id === movie.id)
-const watchlistDisabled = storedMovie ? true  : false
-//also add funciotnality so once a user adds a movie that movie is no longer avail to add
+let movieWatched =  watched.find(movieObj => movieObj.id === movie.id)
+
+const watchlistDisabled = storedMovie ? true  : movieWatched ? true : false; 
+
     return (
         <div >
             <div className="movie">
@@ -31,7 +33,8 @@ const watchlistDisabled = storedMovie ? true  : false
 
 const mapStateToProps = state => {
     return {
-        watchlist: state.myWatchlist.watchlist
+        watchlist: state.myWatchlist.watchlist, 
+        watched: state.myWatchlist.watched
     }
 } 
 
