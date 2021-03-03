@@ -6,19 +6,24 @@ import WatchlistCard from './WatchlistCard'
 
 
 export const MyWatchlist = ({ watchlist }) => {
-    
+
     return (
         <div>
             <h1 className="heading">My Watchlist</h1>
             <div>
-            {/* have to include logic here if there is nothing in the watchlist, code below */}
-            {watchlist.watchlist.map(movie => {
-               return <WatchlistCard key={movie.id} movie={movie} type="watchlist"/>
-            })}
+                {watchlist.length > 0 ? (
+                    <div className="main">
+                        {watchlist.map((movie) => (
+                            <WatchlistCard movie={movie} key={movie.id} type="watchlist" />
+                        ))}
+                    </div>
+                ) : (
+                        <h2 className="no-movies">No movies in your list! Add some!</h2>
+                    )}
             </div>
         </div>
     )
-    
+
 }
 
 
@@ -26,7 +31,7 @@ export const MyWatchlist = ({ watchlist }) => {
 
 const mSTP = state => {
     return {
-     watchlist: state.myWatchlist
+     watchlist: state.myWatchlist.watchlist
     }
 }
 
@@ -40,6 +45,16 @@ export default connect(mSTP)(MyWatchlist);
 // ) : (
 //     <h2 className="no-movies">No movies</h2>
 // )
+
+// {watchlist.length > 0 ? (
+//     <div className="movie-grid">
+//       {watchlist.map((movie) => (
+//         <MovieCard movie={movie} key={movie.id} type="watchlist" />
+//       ))}
+//     </div>
+//   ) : (
+//     <h2 className="no-movies">No movies in your list! Add some!</h2>
+//   )}
  
 
 
