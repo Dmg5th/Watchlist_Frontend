@@ -5,10 +5,10 @@ import { addMovieToWatchlist } from "../../actions/myWatchlist"
 
 const ResultsCard = ({ movie, addMovieToWatchlist, watchlist, watched}) => {
 //Once a user adds a movie that movie is no longer avail to add
-let storedMovie = watchlist.find(MovieObj => MovieObj.id === movie.id)
-let movieWatched =  watched.find(movieObj => movieObj.id === movie.id)
+// let storedMovie = watchlist.find(MovieObj => MovieObj.id === movie.id)
+// let movieWatched =  watched.find(movieObj => movieObj.id === movie.id)
 
-const watchlistDisabled = storedMovie ? true  : movieWatched ? true : false; 
+// const watchlistDisabled = storedMovie ? true  : movieWatched ? true : false; 
 
     return (
         <div >
@@ -22,7 +22,7 @@ const watchlistDisabled = storedMovie ? true  : movieWatched ? true : false;
                     )}
                     <div className="controls">
                         <button 
-                        disabled={watchlistDisabled}
+                        // disabled={watchlistDisabled}
                         onClick={() => addMovieToWatchlist(movie)} className="btn btn-primary btn-lg">Add to Watchlist</button>
                     </div>
                 </Card>

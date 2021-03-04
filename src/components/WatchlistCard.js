@@ -5,8 +5,8 @@ import { removeMovieFromWatchlist } from '../actions/myWatchlist'
 import { addMovieToWatched } from '../actions/myWatchlist'
 
 
-const WatchlistCard = ({movie, removeMovieFromWatchlist, addMovieToWatched}) => {
-  
+const WatchlistCard = ({ movie, removeMovieFromWatchlist, addMovieToWatched }) => {
+  console.log(movie)
   return (
     <div className="main">
       <Card>

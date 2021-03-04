@@ -29,33 +29,45 @@ export const getMyWatchlist = () => {
     }
 }
 
-// export const addMovieToWatchlist = movie => {
-//   return dispatch => {
-//     return fetch("http://localhost:3001/user_movies", {
-//       credentials: "include",
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(movie)
-//     })
-//       .then(r => r.json())
-//       .then(response => {
-//         if (response.error) {
-//           alert(response.error)
-//         } else {
-//           dispatch(addMovie(response.data))
-//           dispatch(getMyWatchlist())
-//           // dispatch(resetLoginForm())
-//           // history.push('/')
-//         }
-//       })
-//       .catch(console.log)
-//   }
-// }
 export const addMovieToWatchlist = movie => {
-  return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie });
-};
+  return (dispatch, getState) => {
+    fetch("http://localhost:3001/movies", {
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(movie)
+    })
+      .then(r => r.json())
+      .then(resp => {
+        const {currentUser} = getState()
+        console.log(currentUser, "current user")
+        console.log(resp, "this is the response")
+        fetch("http://localhost:3001/user_movies", {
+          credentials: "include",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({user_id: currentUser.id, movie_id: resp.id})
+        })
+          .then(r => r.json())
+          .then(response => {
+            if (response.error) {
+              alert(response.error)
+            } else {
+              console.log(response, "this is the second response")
+              dispatch({ type: "ADD_MOVIE_TO_WATCHLIST", payload: response.data })
+            }
+          })
+          .catch(error => console.log(error))
+      })
+  }
+}
+// export const addMovie = movie => {
+//   return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie });
+// };
 
 export const removeMovieFromWatchlist = id => {
   return ({ type: "REMOVE_MOVIE_FROM_WATCHLIST", payload: id });

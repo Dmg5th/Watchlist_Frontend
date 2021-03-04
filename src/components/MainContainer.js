@@ -14,7 +14,7 @@ class MainContainer extends React.Component {
         fetch(featured_api)
         .then(resp => resp.json())
         .then(data => this.setState({
-            movies: data.results
+            movies: data.results.map(movie => ({...movie, id: null, tmdb_id: movie.id}))
         }))
     } 
     
