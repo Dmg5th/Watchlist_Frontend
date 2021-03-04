@@ -6,7 +6,6 @@ import { addMovieToWatched } from '../actions/myWatchlist'
 
 
 const WatchlistCard = ({ movie, removeMovieFromWatchlist, addMovieToWatched }) => {
-  console.log(movie)
   return (
     <div className="main">
       <Card>

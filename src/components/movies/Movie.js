@@ -5,7 +5,7 @@ import { addMovieToWatchlist } from '../../actions/myWatchlist'
 
 
 const Movie = ({ data, addMovieToWatchlist, watchlist }) => {
-    console.log(data.tmdb_id)
+   
     let storedMovie = watchlist.find(movie => movie.tmdb_id === data.tmdb_id)
     const watchlistDisabled = storedMovie ? true : false
    
