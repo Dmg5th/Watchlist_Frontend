@@ -18,7 +18,7 @@ class Search extends React.Component {
         .then(data => {
             if(!data.errors){
                 this.setState({
-                    results: data.results
+                    results: data.results.map(movie => ({...movie, id: null, tmdb_id: movie.id}))
                 })
             } else {
                 this.setState({
