@@ -66,9 +66,6 @@ export const addMovieToWatchlist = movie => {
       })
   }
 }
-// export const addMovie = movie => {
-//   return ({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie });
-// };
 
 export const removeMovieFromWatchlist = id => {
   return ({ type: "REMOVE_MOVIE_FROM_WATCHLIST", payload: id });
@@ -81,6 +78,16 @@ export const addMovieToWatched = movie => {
 export const removeMovieFromWatched =id => {
   return ({ type: "REMOVE_MOVIE_FROM_WATCHED", payload: id})
 }
+
+// export const logout = history => {
+//   return dispatch => {
+//     dispatch(clearCurrentUser())
+//     return fetch('http://localhost:3001/logout', {
+//       credentials: "include",
+//       method: "DELETE"
+//     })
+//   }
+// }
 
 
 
