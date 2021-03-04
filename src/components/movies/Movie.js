@@ -13,7 +13,7 @@ const Movie = ({ data, addMovieToWatchlist, watchlist }) => {
         <div className="movie">
             <Card>
                 <div className="card text-white bg-primary mb-3">
-                    <Card.Title>{data.title}</Card.Title>
+                    <Card.Title className="card-header"><h3>{data.title}</h3></Card.Title>
                     <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${data.poster_path}`} alt={data.title} />
                     <button
                             disabled={watchlistDisabled}

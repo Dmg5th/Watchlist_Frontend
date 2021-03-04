@@ -15,7 +15,7 @@ const watchlistDisabled = storedMovie ? true  : movieWatched ? true : false;
             <div className="movie">
                 <Card>
                     <div className="card text-white bg-primary mb-3">
-                        <Card.Title className="card-header">{movie.title}</Card.Title>
+                        <Card.Title className="card-header"><h3>{movie.title}</h3></Card.Title>
                         {movie.poster_path ? (
                             <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                         ) : (
