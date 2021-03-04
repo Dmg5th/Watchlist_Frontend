@@ -18,7 +18,7 @@ export const getMyWatchlist = () => {
           })
             .then(r => r.json())
             .then(response => {
-                // console.log(response)
+                console.log(response)
               if (response.error) {
                 alert(response.error)
               } else {
@@ -41,6 +41,7 @@ export const addMovieToWatchlist = movie => {
     })
       .then(r => r.json())
       .then(resp => {
+        console.log(resp, "NEW")
         const {currentUser} = getState()
         console.log(currentUser, "current user")
         console.log(resp, "this is the response")
@@ -58,7 +59,7 @@ export const addMovieToWatchlist = movie => {
               alert(response.error)
             } else {
               console.log(response, "this is the second response")
-              dispatch({ type: "ADD_MOVIE_TO_WATCHLIST", payload: response.data })
+              dispatch({ type: "ADD_MOVIE_TO_WATCHLIST", payload: response })
             }
           })
           .catch(error => console.log(error))
