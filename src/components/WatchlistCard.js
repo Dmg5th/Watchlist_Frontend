@@ -5,7 +5,7 @@ import { removeMovieFromWatchlist } from '../actions/myWatchlist'
 import { addMovieToWatched } from '../actions/myWatchlist'
 
 
-const WatchlistCard = ({ movie, removeMovieFromWatchlist, addMovieToWatched }) => {
+const WatchlistCard = ({ movie, removeMovieFromWatchlist, addMovieToWatched, history }) => {
   return (
     <div className="main">
       <Card>
@@ -19,7 +19,7 @@ const WatchlistCard = ({ movie, removeMovieFromWatchlist, addMovieToWatched }) =
                 <i className="fa-fw far fa-eye"></i>
               </button>
               
-              <button onClick={() => removeMovieFromWatchlist(movie.id)} className="btn btn-warning">
+              <button onClick={() => removeMovieFromWatchlist(movie.id, history)} className="btn btn-warning">
                 <i className="fa-fw fa fa-times"></i>
               </button>
             

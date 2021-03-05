@@ -3,27 +3,33 @@ import { connect } from 'react-redux'
 import Logout from './Logout'
 import { Link } from 'react-router-dom'
 import Search from './movies/Search'
+import '../index.css'
 
 
 const NavBar = ({ currentUser, loggedIn }) => {
     return (
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a className="navbar-brand"><Link to="/">WELCOME TO WATCHLIST!</Link></a>
-            {currentUser ? <strong> Welcome, {currentUser.attributes.username}!</strong> : ""}
-              <div className="collapse navbar-collapse" id="navbarColor03">
+            {currentUser ? 
+                <h1> Hi,{currentUser.attributes.username}! <Link to="/">Welcome to Watchlist!</Link> 
+                </h1> : <h1 ><Link to="/">Welcome to Watchlist!</Link></h1>}
+            
+            
+            <div className="collapse navbar-collapse" id="navbarColor03">
                 <ul className="navbar-nav mr-auto">
-                    <div className="collapse navbar-collapse" id="navbarColor03" >
-                        <li className="nav-item active">
-                            <a><Link to="/user_movies" className="nav-link">Watchlist</Link></a>
-                        </li>
-                        <li className="nav-item active">
-                            <a><Link to="/watched" className="nav-link">Watched</Link></a>
-                        </li>
-                        <li className="nav-item active">
-                            <a><Link to="/search" className="nav-link">Search</Link></a>
-                        </li>
-                        {loggedIn ? <Logout />
+
+                    {loggedIn ?
+                        <div className="collapse navbar-collapse" id="navbarColor03" >
+                            <li className="nav-item active">
+                                <a><Link to="/user_movies" className="nav-link">Watchlist</Link></a>
+                            </li>
+                            <li className="nav-item active">
+                                <a><Link to="/watched" className="nav-link">Watched</Link></a>
+                            </li>
+                            <li className="nav-item active">
+                                <a><Link to="/search" className="nav-link">Search</Link></a>
+                            </li> <Logout />
+                        </div>
                         : (
                             <div className="collapse navbar-collapse" id="navbarColor03">
                                 <li className="nav-item active">
@@ -34,13 +40,9 @@ const NavBar = ({ currentUser, loggedIn }) => {
                                 </li>
                             </div>
                         )}
-                        
-                    </div>
                 </ul>
-                
             </div>
         </nav>
-
     )
 }
 

@@ -18,7 +18,8 @@ export default (state = initialState, action) => {
     case "REMOVE_MOVIE_FROM_WATCHLIST":
       return {
         ...state,
-        watchlist: state.watchlist.filter(movieObj => movieObj.id !== action.payload),
+        watchlist: state.watchlist.filter(movieObj => { console.log(movieObj.id, action.payload, "remove movie reducer from watchlist")
+          return movieObj.id !== action.payload}),
       }
     case "ADD_MOVIE_TO_WATCHED":
       return {

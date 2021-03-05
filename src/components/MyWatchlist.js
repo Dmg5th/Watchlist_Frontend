@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import WatchlistCard from './WatchlistCard'
 
 
 
 
-export const MyWatchlist = ({ watchlist }) => {
-
+export const MyWatchlist = ({ watchlist, history }) => {
+    useEffect(() => {
+        console.log("testing")
+    }, [watchlist])
     return (
         <div>
             <h1 className="heading">My Watchlist</h1>
@@ -14,7 +16,7 @@ export const MyWatchlist = ({ watchlist }) => {
                 {watchlist.length > 0 ? (
                     <div className="main">
                         {watchlist.map((movie) => (
-                            <WatchlistCard movie={movie} key={movie} type="watchlist" />
+                            <WatchlistCard movie={movie} key={movie} type="watchlist" history={history}/>
                         ))}
                     </div>
                 ) : (
