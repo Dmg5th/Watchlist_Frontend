@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateSignupForm} from "../actions/signupForm"
 import { signup } from "../actions/currentUser"
+import '../index.css';
 
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history}) => {
@@ -24,10 +25,10 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history}) => {
     <div class="jumbotron">
         <h1 class="display-3">Signup for Watchlist!</h1>
       <form onSubmit={handleSubmit}>
-        
+       
         <div className="form-group">
-          <label className="col-form-label col-form-label-lg"></label>
-          <input className="form-control form-control-lg" placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleInputChange} />
+          {/* <label className="col-form-label col-form-label-lg">Please enter your name</label> */}
+          <input className="form-control" placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleInputChange} />
         </div>
 
         <div class="form-group">
@@ -38,6 +39,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history}) => {
           <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleInputChange} />
           <input className="btn btn-primary btn-lg" type="submit" value="Sign Up" />
         </div>
+       
       </form>
     </div>
   )

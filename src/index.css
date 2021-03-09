@@ -53,5 +53,47 @@ body {
   font-size: 2rem;
 }
 
+.jumbotron {
+  width: 100rem;
+  height: 40rem;
+  border: 3px solid green;
+  margin-top:20rem;
+  margin-left: 40rem;
+}
+
+.login-form{
+  width: 50rem;
+  border: 3px solid green;
+  margin-top: 5rem;
+  margin-left: 70rem;
+  font-size: 2rem;
+}
+
+.movie_card:hover{
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(255,255, 255, 0.8);
+}
+
+.movie_card:active{
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(255,255, 255, 0.8);
+}
+
+.movie_description{
+  background-color: rgba(255,255, 255, 0.8);
+  font-size: 1.2rem;
+  color: black;
+  display: none;
+  z-index: 5;
+  position: absolute;
+  padding: 1.5rem;
+  bottom: 5%;
+  
+}
+
+.movie_card:hover .movie_description{
+  display: block;
+}
+
 
 

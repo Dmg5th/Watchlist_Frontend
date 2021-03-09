@@ -20,10 +20,15 @@ export const clearCurrentUser = user => {
 export const logout = history => {
   return dispatch => {
     dispatch(clearCurrentUser())
+    dispatch({type: "RESET_WATCHLIST"})
+    dispatch({type: "RESET_WATCHED"})
     return fetch('http://localhost:3001/logout', {
       credentials: "include",
       method: "DELETE"
     })
+    // .then( () => {
+    //   history.push('/')
+    // })
   }
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Movie from './movies/Movie'
+import { Loader} from './Loader'
 
 
 const featured_api = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}`
@@ -20,11 +21,15 @@ class MainContainer extends React.Component {
     
     render() {
         return (
-            <div className="main ">
-               {this.state.movies.map(movie => {
-                    return <Movie key={movie.id} data={movie}/>
-                })} 
-            </div>
+            <>
+                {!this.state.movies.length ? <Loader /> : (
+                    <div className="main ">
+                        {this.state.movies.map(movie => {
+                            return <Movie key={movie.id} data={movie} />
+                        })}
+                    </div>
+                )}
+            </>
         )
     }
 }
