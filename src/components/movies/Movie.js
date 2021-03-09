@@ -23,6 +23,7 @@ const Movie = ({ data, addMovieToWatchlist, watchlist, currentUser }) => {
                     </button>
                 )}
             </Card>
+            
         </div>
     )
 }

@@ -29,9 +29,11 @@ class MainContainer extends React.Component {
                         })}
                     </div>
                 )}
+                   <footer className="main_footer">You are enjoying the top 20 streaming movies right now</footer>
             </>
-        )
+            )
     }
+ 
 }
 
 
