@@ -8,10 +8,11 @@ import { addMovieToWatched } from '../actions/myWatchlist'
 const WatchlistCard = ({ movie, removeMovieFromWatchlist, addMovieToWatched, history }) => {
   return (
     <div className="main">
-      <Card>
-        <div className="movie">
-          <div className="card text-white bg-primary mb-3">
-            <Card.Title className="card-header"><h3>{movie.title}</h3></Card.Title>
+      <div className="movie">
+      <Card className="card text-white bg-primary mb-3 movie_card">
+        
+          <div >
+            <Card.Title><h3>{movie.title}</h3></Card.Title>
             <div class="card-body">
               <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
               
@@ -25,8 +26,9 @@ const WatchlistCard = ({ movie, removeMovieFromWatchlist, addMovieToWatched, his
             
             </div>
           </div>
-        </div>
+        
       </Card>
+      </div>
     </div>
   )
 }

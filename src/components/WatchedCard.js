@@ -9,9 +9,9 @@ const WatchedCard = ({movie, removeMovieFromWatched }) => {
   
   return (
     <div className="main">
-      <Card>
+      <Card className="card text-white bg-primary mb-3">
         <div className="movie">
-          <div className="card text-white bg-primary mb-3">
+          <div >
             <Card.Title className="card-header">{movie.title}</Card.Title>
             <div class="card-body">
               <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />

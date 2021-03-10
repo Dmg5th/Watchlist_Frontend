@@ -12,9 +12,9 @@ const watchlistDisabled = storedMovie ? true  : movieWatched ? true : false;
 
     return (
         <div className="movie" >
-          <Card >
+          <Card className="card text-white bg-primary mb-3 movie_card">
                 <div >
-                    <div className="card text-white bg-primary mb-3 movie_card">
+                    <div >
                         <Card.Title className="card-header"><h3>{movie.title}</h3></Card.Title>
                         <div className="card-body">
                             {movie.poster_path ? (
