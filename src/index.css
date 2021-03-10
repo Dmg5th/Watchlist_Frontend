@@ -62,9 +62,18 @@ body {
 }
 
 .login-form{
-  width: 50rem;
+  width: 52rem;
   border: 3px solid green;
   margin-top: 0rem;
+  margin-left: 70rem;
+  font-size: 2rem;
+}
+
+div.search_form{
+  width: 58rem;
+  border: 3px solid green;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
   margin-left: 70rem;
   font-size: 2rem;
 }
@@ -103,20 +112,47 @@ body {
 .signup_form{
   width: 50rem;
   border: 3px solid green;
-  margin-top: 5rem;
+  margin-top: 0rem;
   margin-left: 70rem;
   font-size: 2rem;
 }
 
-.display-3 {
+h1.signup_title {
+  color: whitesmoke;
   text-align: center;
   text-shadow: black;
-  font-size: 20rem;
+  font-size: 4rem;
 }
 
-.btn-success{
- color: red;
+h1.login_header{
+  font-size: 3rem;
+} 
+
+button.login_button {
+  font-size: 2rem;
 }
+
+div.signup_input{
+  font-size: 3rem;
+}
+
+button.form_button {
+  font-size: 2rem;
+}
+
+button.search_button{
+  bottom: 10rem;
+  font-size: 2rem;
+  margin-top: -1rem;
+}
+
+.search_text{
+  align-items: center;
+  font-size: 3rem;
+  width: 100rem;
+}
+
+
 
 
 

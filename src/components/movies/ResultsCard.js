@@ -11,24 +11,29 @@ let movieWatched =  watched.find(movieObj => movieObj.tmdb_id === movie.tmdb_id)
 const watchlistDisabled = storedMovie ? true  : movieWatched ? true : false; 
 
     return (
-        <div >
-            <div className="movie">
-                <Card>
+        <div className="movie" >
+          <Card >
+                <div >
                     <div className="card text-white bg-primary mb-3 movie_card">
                         <Card.Title className="card-header"><h3>{movie.title}</h3></Card.Title>
-                        {movie.poster_path ? (
-                            <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                        ) : (
-                            <div className="filler-poster"></div>
-                        )}
-                         <Card.Text className="movie_description">{movie.overview}</Card.Text>
-                        <button
+                        <div className="card-body">
+                            {movie.poster_path ? (
+                                <Card.Img className="movie__image" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                            ) : (
+                                <div className="filler-poster"></div>
+                            )}
+                            <Card.Text className="movie_description">{movie.overview}</Card.Text>
+
+                            <button
                                 disabled={watchlistDisabled}
                                 onClick={() => addMovieToWatchlist(movie)} className="btn btn-success">Add to Watchlist
-                        </button>
+                            </button>
+
+                        </div>
                     </div>
-                </Card>
-            </div>
+                </div>
+            </Card>
+
         </div>
     )
 }

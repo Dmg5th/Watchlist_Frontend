@@ -26,10 +26,10 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
     <Card className="card text-white bg-primary mb-3">
       
         <form className="login-form" onSubmit={handleSubmit}>
-          <Card.Title className="card-header"><h1>Log in!</h1></Card.Title>
+          <h1 className="display-3 login_header">Log in!</h1>
           <input placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
           <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
-          <input type="submit" value="Log In" />
+          <button className="btn btn-success login_button" type="submit" value="Log In">Submit </button>
         </form>
       
     </Card>
