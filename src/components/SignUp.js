@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { updateSignupForm} from "../actions/signupForm"
 import { signup } from "../actions/currentUser"
 import '../index.css';
+import { Card } from 'react-bootstrap';
 
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history}) => {
@@ -22,13 +23,13 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history}) => {
   }
 
   return (
-    <div class="jumbotron">
-        <h1 class="display-3">Signup for Watchlist!</h1>
-      <form onSubmit={handleSubmit}>
+    <div >
+      <Card className="card text-white bg-primary mb-3">
        
+      <form className="signup_form" onSubmit={handleSubmit}>
+      <h1 className="display-3">Signup for Watchlist!</h1><br></br>
         <div className="form-group">
-          {/* <label className="col-form-label col-form-label-lg">Please enter your name</label> */}
-          <input className="form-control" placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleInputChange} />
+          <input  placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleInputChange} />
         </div>
 
         <div class="form-group">
@@ -36,11 +37,13 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history}) => {
         </div>
 
         <div class="form-group">
-          <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleInputChange} />
-          <input className="btn btn-primary btn-lg" type="submit" value="Sign Up" />
+          <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleInputChange}/> <br></br> 
+          <button className="btn btn-success form_button" type="submit" value="Sign Up">Submit </button> 
         </div>
        
       </form>
+
+      </Card>
     </div>
   )
 }
