@@ -26,9 +26,7 @@ export const logout = history => {
       credentials: "include",
       method: "DELETE"
     })
-    // .then( () => {
-    //   history.push('/')
-    // })
+
   }
 }
 

@@ -32,8 +32,7 @@ class App extends React.Component {
             <Route exact path="/" component={Home}/>
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            {/* //Need to make it so a user can only there watchlist */}
-            {/* <Route exact path="/watchlist" render={(props) => loggedIn ? <MyWatchlist {...props}/> : <Signup/>} /> */}
+      
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/user_movies" component={MyWatchlist} />
             <Route exact path="/watched" component={Watched}/>
