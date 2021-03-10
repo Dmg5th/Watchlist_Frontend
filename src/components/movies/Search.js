@@ -1,5 +1,7 @@
 import React from 'react'
+import { Card } from 'react-bootstrap';
 import ResultsCard from './ResultsCard';
+import '../../index.css'
 
 class Search extends React.Component {
     
@@ -31,17 +33,21 @@ class Search extends React.Component {
     render() {
        
         return (
-            <div className="main">
-                <div className="search-form-wrapper">
-                    <form className="form-inline my-2 my-lg-0" >
-                        <input className="form-control mr-sm-2" type="text" placeholder="Search for a movie" value={this.state.query} onChange={this.handleChange} />
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <div>
+                <Card className="card text-white bg-primary mb-3">
+                    <div className="login-form">
+                    <form className="form-group" >
+                    <Card.Title><h1>Search for a movie in our database!</h1></Card.Title>
+                        <input type="text" placeholder="Search for a movie" value={this.state.query} onChange={this.handleChange} />
+                        <button class="btn btn-success" type="submit">Search</button>
                     </form>
                 </div>
                 {this.state.results.map(movie => {
                     return <ResultsCard key={movie.id} movie={movie}/>
                 })}
-            </div>
+                </Card>
+                </div>
+           
         )
     }
 }
