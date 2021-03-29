@@ -40,23 +40,7 @@ const mSTP = state => {
 export default connect(mSTP)(MyWatchlist); 
 
 
-// {watchlist.watchlist.length > 0 ? (
-//     {watchlist.watchlist.map(movie => (
-//          <WatchlistCard key={movie.id} movie={movie} type="watchlist"/>
-//      ))}
-// ) : (
-//     <h2 className="no-movies">No movies</h2>
-// )
 
-// {watchlist.length > 0 ? (
-//     <div className="movie-grid">
-//       {watchlist.map((movie) => (
-//         <MovieCard movie={movie} key={movie.id} type="watchlist" />
-//       ))}
-//     </div>
-//   ) : (
-//     <h2 className="no-movies">No movies in your list! Add some!</h2>
-//   )}
  
 
 
