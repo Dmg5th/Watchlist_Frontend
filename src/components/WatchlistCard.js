@@ -7,6 +7,7 @@ import { addMovieToWatched } from '../actions/myWatchlist'
 
 
 
+
 const WatchlistCard = ({ movie, removeMovieFromWatchlist, addMovieToWatched, history }) => {
 
   return (
@@ -28,6 +29,7 @@ const WatchlistCard = ({ movie, removeMovieFromWatchlist, addMovieToWatched, his
                 <i className="fa-fw fa fa-times"></i>
               </button>
 
+           
            </div>
       
         </div>

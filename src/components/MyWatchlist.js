@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import WatchlistCard from './WatchlistCard'
 
@@ -6,9 +6,7 @@ import WatchlistCard from './WatchlistCard'
 
 
 export const MyWatchlist = ({ watchlist, history }) => {
-    useEffect(() => {
-        console.log("testing")
-    }, [watchlist])
+
     return (
         <div>
             <h1 className="heading">My Watchlist</h1>
@@ -27,9 +25,6 @@ export const MyWatchlist = ({ watchlist, history }) => {
     )
 
 }
-
-
-
 
 const mSTP = state => {
     return {
